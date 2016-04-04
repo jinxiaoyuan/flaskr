@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block head %}
+    <title>Forget password</title>
+{% endblock %}
+{% block content %}
+    <form action="" method="POST">
+        {{ form.csrf_token }}
+        {{ form.account.label }} to reset: {{ form.account }}
+        <input type="submit" value="Submit" />
+    </form>
+{% endblock %}

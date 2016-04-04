@@ -1,0 +1,8 @@
+{# Jinja2 macros #}
+{% macro nav_link(endpoint, display_text) %}
+    {%- if request.endpoint.endswith(endpoint) -%}
+        <li class="active"><a href="{{ url_for(endpoint) }}">{{ display_text }}</a></li>
+    {%- else -%}
+        <li><a href="{{ url_for(endpoint) }}">{{ display_text }}</a></li>
+    {%- endif -%}
+{% endmacro %}

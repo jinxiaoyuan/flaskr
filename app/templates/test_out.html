@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% from "macros.html" import nav_link with context %}
+{%- block content -%}
+    <div><p>{{ output }}</p></div>
+    <ul class="nav-list">
+        {{ nav_link('home.index', 'Home') }}
+        {{ nav_link('home.about', 'About') }}
+        {{ nav_link('home.contact', 'Get in touch') }}
+    </ul>
+{%- endblock -%}

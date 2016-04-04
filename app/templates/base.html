@@ -1,0 +1,27 @@
+<html>
+    <head>
+    {% block head %}
+        <title>Brother yuan's big project</title>
+    {% endblock %}
+        <link rel="shortcut icon" href="{{ url_for('static', filename='images/OS_Linux_128px.ico') }}">
+        <meta http-equiv="content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Page-Enter" content="revealTrans(duration=1.0,transtion=3)">
+        <meta http-equiv="Page-Exit" content="revealTrans(duration=1.0,transtion=12)">
+    </head>
+    <body style="width: 900px; margin:0 auto">
+        <h1>brother yuan's big project: </h1>
+        <hr>
+        <h2 style="color: red; text-align: center">Hi, this page is for testing!</h2>
+        {% block content %}
+            {%- with messages = get_flashed_messages(with_categories=true) -%}
+                {%- if messages -%}
+                    <ul>
+                        {% for cate, msg in messages %}
+                            <li class_="{{ cate }}">{{ msg }} </li>
+                        {% endfor %}
+                    </ul>
+                {%- endif -%}
+            {%- endwith -%}
+        {% endblock %}
+    </body>
+</html>

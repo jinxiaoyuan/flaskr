@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block head %}
+    <title>{{ author }}'s posts</title>
+{% endblock %}
+
+{% block content %}
+    {% for key in posts_dict %}
+    <h3>{{ key }}: </h3>
+        <p>{{ posts_dict[key] }}</p>
+        <br/><br/>
+    {% endfor %}
+{% endblock %}
